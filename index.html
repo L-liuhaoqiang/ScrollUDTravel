@@ -49,14 +49,27 @@
             -webkit-transform: rotate(45deg);
             -webkit-transtion: all .3s linear;
         }
+        
+        .donghua {
+            animation: identifier 3s linear infinite;
+        }
+        
+        @keyframes identifier {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- Swiper -->
-    <audio src="./audio/毛毛 - 奇迹再现.mp3" autoplay id="music"></audio>
+    <audio src="./audio/毛毛 - 奇迹再现.mp3" autoplay="autoplay" id="music"></audio>
 
-    <img src="./image/music-start.svg" class="xixi" onclick="play()" />
+    <img src="./image/music-start.svg" class="xixi donghua" onclick="play()" />
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide home-page">
@@ -69,7 +82,7 @@
                 <section class="firstPage1">
                     <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/Fk6yWm-H4a06D-mdEg64ZHYYsvqq?imageMogr2/auto-orient/thumbnail/233x12%3E/format/webp" alt="">
                     <img class="ani" swiper-animate-effect="flipInY" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/FvFnLlu6apufVrHSnaZdK5lcyFXv?imageMogr2/auto-orient/thumbnail/117x126%3E/format/webp" alt="">
-                    <span class="ani" swiper-animate-effect=" flipInX" swiper-animate-duration="2s" swiper-animate-delay="0.3s">一直想去旅行，去很美很美的地方，无论身处何处，只要有一颗放松而美好的心态，生活便是美好！</span>
+                    <span class="ani" swiper-animate-effect=" flipInX" swiper-animate-duration="2s" swiper-animate-delay="0.3s" style="font-size: 0.3rem;">一直想去旅行，去很美很美的地方，无论身处何处，只要有一颗放松而美好的心态，生活便是美好！</span>
                 </section>
             </div>
             <!-- 2 -->
@@ -79,7 +92,7 @@
                 </section>
                 <section class="TwoPageworld">
                     <img class="ani TwoImg2" swiper-animate-effect="flipInY" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/FoBao_EPdgE3Q8C1Ce_gAjxtIm3N?imageMogr2/auto-orient/thumbnail/93x117%3E/format/webp" alt="">
-                    <span class="ani" swiper-animate-effect=" flipInX" swiper-animate-duration="2s" swiper-animate-delay="0.3s">只有一个人在旅行时，才听得到自己的声音。它会告诉你，这世界比想象中的宽阔</span>
+                    <span class="ani" swiper-animate-effect=" flipInX" swiper-animate-duration="2s" swiper-animate-delay="0.3s" style="font-size: 0.3rem;">只有一个人在旅行时，才听得到自己的声音。它会告诉你，这世界比想象中的宽阔</span>
                 </section>
                 <div class="team">
                     <img class="ani teamOne" swiper-animate-effect="fadeInLeft" swiper-animate-duration="2s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/o_1ddhecdfb1iiqg58ig01hh6tfvs.jpeg?imageMogr2/auto-orient/thumbnail/140x210%3E/format/webp" alt="">
@@ -101,7 +114,7 @@
                 <div class="PageFourWID">
                     <img class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/o_1ddkghojv19hfb6hr7qtf3lr514.jpeg?imageMogr2/auto-orient/thumbnail/294x441%3E/format/webp" alt="">
                 </div>
-                <p class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="4s" swiper-animate-delay="0.3s">其实很向往一场旅行的过程，而不是目的地。就好像在高速公路上看着两旁飞退的景一样。怀揣着一种恬淡，内心是无比安宁的。</p>
+                <p class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="4s" swiper-animate-delay="0.3s" style="font-size: 0.3rem;">其实很向往一场旅行的过程，而不是目的地。就好像在高速公路上看着两旁飞退的景一样。怀揣着一种恬淡，内心是无比安宁的。</p>
                 <div class="PageFourWID1">
                     <img class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/o_1ddkgnkbb1dbqth8tt51n87oq119.jpeg?imageMogr2/auto-orient/thumbnail/293x365%3E/format/webp" alt="">
                 </div>
@@ -133,18 +146,12 @@
             var audios = document.getElementById("music");
             //获取到img标签
             var xixi = document.querySelector(".xixi");
-            //判断音频是否停止
-            if (audios.paused) {
-                //如果已停止则播放音频并更换图标
-                xixi.src = "./image/music-start.svg";
-
-                audios.play();
+            if (audios.autoplay) {
+                audios.autoplay = false;
+                $(".donghua").css("animation-play-state", "paused")
             } else {
-                //如果已停止重新加载音频并关闭音频和更换图标
-
-                xixi.src = "./image/music-start.svg";
-                audios.pause();
-                audios.load();
+                $(".donghua").css("animation-play-state", "running")
+                audios.autoplay = true;
             }
         }
         // 轮播图
@@ -153,7 +160,6 @@
             slidesPerView: 1,
             // spaceBetween: 30,
             mousewheel: true,
-
             pagination: {
                 el: '.swiper-pagination',
 
