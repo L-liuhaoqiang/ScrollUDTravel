@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+        
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .xixi {
+            position: absolute;
+            width: 1.2rem;
+            height: 1.2rem;
+            right: .4rem;
+            top: .533333rem;
+            z-index: 999;
+        }
+        
+        .rotate {
+            transform: rotate(45deg);
+            transition: all .3s linear;
+            -webkit-transform: rotate(45deg);
+            -webkit-transtion: all .3s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <audio src="./audio/毛毛 - 奇迹再现.mp3" autoplay id="music"></audio>
+
+    <img src="./image/music-start.svg" class="xixi" onclick="play()" />
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide home-page">
+                <section class="firstPage">
+                    <img class="ani home-one" swiper-animate-effect="home-one" swiper-animate-duration="4s" src="http://res1.eqh5.com/Fp0K8NCAu66VCbFq2Ki0f8XjW4C7?imageMogr2/auto-orient/thumbnail/393x262%3E/format/webp" alt="">
+                    <h2 class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="4s" swiper-animate-delay="0.3s">2020</h2>
+                    <p class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="4s" swiper-animate-delay="0.3s">06/08</p>
+                    <img class="ani firstImg" swiper-animate-effect="flipInX" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/Fm2Gvd78d3OXxVK7flt_I-Lp4TJc?imageMogr2/auto-orient/thumbnail/22x2%3E/format/webp" alt="">
+                </section>
+                <section class="firstPage1">
+                    <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/Fk6yWm-H4a06D-mdEg64ZHYYsvqq?imageMogr2/auto-orient/thumbnail/233x12%3E/format/webp" alt="">
+                    <img class="ani" swiper-animate-effect="flipInY" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/FvFnLlu6apufVrHSnaZdK5lcyFXv?imageMogr2/auto-orient/thumbnail/117x126%3E/format/webp" alt="">
+                    <span class="ani" swiper-animate-effect=" flipInX" swiper-animate-duration="2s" swiper-animate-delay="0.3s">一直想去旅行，去很美很美的地方，无论身处何处，只要有一颗放松而美好的心态，生活便是美好！</span>
+                </section>
+            </div>
+            <!-- 2 -->
+            <div class="swiper-slide">
+                <section class="TwoPage">
+                    <img class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="3s" src="http://res1.eqh5.com/FmE-LXUzTCue5z5xYP-cQv92urmT?imageMogr2/auto-orient/thumbnail/321x195%3E/format/webp" alt="">
+                </section>
+                <section class="TwoPageworld">
+                    <img class="ani TwoImg2" swiper-animate-effect="flipInY" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/FoBao_EPdgE3Q8C1Ce_gAjxtIm3N?imageMogr2/auto-orient/thumbnail/93x117%3E/format/webp" alt="">
+                    <span class="ani" swiper-animate-effect=" flipInX" swiper-animate-duration="2s" swiper-animate-delay="0.3s">只有一个人在旅行时，才听得到自己的声音。它会告诉你，这世界比想象中的宽阔</span>
+                </section>
+                <div class="team">
+                    <img class="ani teamOne" swiper-animate-effect="fadeInLeft" swiper-animate-duration="2s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/o_1ddhecdfb1iiqg58ig01hh6tfvs.jpeg?imageMogr2/auto-orient/thumbnail/140x210%3E/format/webp" alt="">
+                    <img class="ani teamTwo" swiper-animate-effect="fadeInRight" swiper-animate-duration="2s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/o_1ddhgmcum17dc1tpaukk2h1gc5q.jpeg?imageMogr2/auto-orient/thumbnail/148x184%3E/format/webp" alt="">
+                    <img class="ani teamThree" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/o_1ddhgmsau1sec13962sf1van852v.jpeg?imageMogr2/auto-orient/thumbnail/148x197%3E/format/webp" alt="">
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="swiper-slide PageThree">
+
+                <img class="ani ThreeImg" swiper-animate-effect="fadeInDown" swiper-animate-duration="3s" src="http://res1.eqh5.com/o_1ddhebma93dj1hcc1jhas749bjn.jpeg?imageMogr2/auto-orient/thumbnail/352x441%3E/format/webp" alt="">
+                <img class="ani ThreeImgTwo" swiper-animate-effect="flipInY" swiper-animate-duration="4s" src="http://res1.eqh5.com/FvFubPybS4pgdz3pu-uW8EiGkbw4?imageMogr2/auto-orient/thumbnail/212x8%3E/format/webp" alt="">
+
+                <article>
+                    <img class="ani" swiper-animate-effect="flipInY" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/FtXmDwuJkSl69DCVW0qpe50ReAtT?imageMogr2/auto-orient/thumbnail/104x175%3E/format/webp" alt="">
+                </article>
+            </div>
+            <div class="swiper-slide PageFour">
+                <div class="PageFourWID">
+                    <img class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/o_1ddkghojv19hfb6hr7qtf3lr514.jpeg?imageMogr2/auto-orient/thumbnail/294x441%3E/format/webp" alt="">
+                </div>
+                <p class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="4s" swiper-animate-delay="0.3s">其实很向往一场旅行的过程，而不是目的地。就好像在高速公路上看着两旁飞退的景一样。怀揣着一种恬淡，内心是无比安宁的。</p>
+                <div class="PageFourWID1">
+                    <img class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/o_1ddkgnkbb1dbqth8tt51n87oq119.jpeg?imageMogr2/auto-orient/thumbnail/293x365%3E/format/webp" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide PageFive">
+                <section>
+                    <img class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/o_1de8l47rl16ok1t8ivaemnk0a2m.jpeg?imageMogr2/auto-orient/thumbnail/141x188%3E/format/webp" alt="">
+                    <img class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="4s" swiper-animate-delay="0.3s" src="http://res1.eqh5.com/o_1de8kiud7sbf1qoi051evu1kt41n.jpeg?imageMogr2/auto-orient/thumbnail/141x211%3E/format/webp" alt="">
+                </section>
+                <div><img class="ani" swiper-animate-effect="flipInY" swiper-animate-duration="4s" src="http://res1.eqh5.com/FvFnLlu6apufVrHSnaZdK5lcyFXv?imageMogr2/auto-orient/thumbnail/118x127%3E/format/webp" alt=""></div>
+                <article>
+                    <img class="ani PageFiveThree" swiper-animate-effect="fadeInUp" swiper-animate-duration="4s" src="http://res1.eqh5.com/o_1de8lpqqt808rpfknf1r9264k.jpeg?imageMogr2/auto-orient/thumbnail/291x438%3E/format/webp" alt="">
+                </article>
+            </div>
+
+            <!-- Add Pagination -->
+
+        </div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="./js/jquery.3.4.1.js"></script>
+    <script src="./js/flexible.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/swiper.animate.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        function play() {
+            //获取到你所定义的音频标签
+            var audios = document.getElementById("music");
+            //获取到img标签
+            var xixi = document.querySelector(".xixi");
+            //判断音频是否停止
+            if (audios.paused) {
+                //如果已停止则播放音频并更换图标
+                xixi.src = "./image/music-start.svg";
+
+                audios.play();
+            } else {
+                //如果已停止重新加载音频并关闭音频和更换图标
+
+                xixi.src = "./image/music-start.svg";
+                audios.pause();
+                audios.load();
+            }
+        }
+        // 轮播图
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            slidesPerView: 1,
+            // spaceBetween: 30,
+            mousewheel: true,
+
+            pagination: {
+                el: '.swiper-pagination',
+
+            },
+            // 动画
+            on: {
+                init: function() {
+                    swiperAnimateCache(this); //隐藏动画元素 
+                    swiperAnimate(this); //初始化完成开始动画
+                },
+                slideChangeTransitionEnd: function() {
+                    swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+                    //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
