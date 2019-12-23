@@ -147,11 +147,13 @@
             //获取到img标签
             var xixi = document.querySelector(".xixi");
             if (audios.autoplay) {
-                audios.autoplay = false;
+                $("#music").pause();
+                $("#music").load();
                 $(".donghua").css("animation-play-state", "paused")
             } else {
+                $('#music').play()
                 $(".donghua").css("animation-play-state", "running")
-                audios.autoplay = true;
+
             }
         }
         // 轮播图
