@@ -67,7 +67,7 @@
 
 <body>
     <!-- Swiper -->
-    <audio src="./audio/毛毛 - 奇迹再现.mp3" autoplay="autoplay" id="music"></audio>
+    <audio src="./audio/毛毛 - 奇迹再现.mp3" autoplay id="music"></audio>
 
     <img src="./image/music-start.svg" class="xixi donghua" onclick="play()" />
     <div class="swiper-container">
@@ -141,19 +141,22 @@
     <script src="./js/swiper.animate.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
+        $("music").paused = false;
+
         function play() {
+            $("audio").removeAttr("autoplay");
             //获取到你所定义的音频标签
             var audios = document.getElementById("music");
+
             //获取到img标签
             var xixi = document.querySelector(".xixi");
-            if (audios.autoplay) {
-                $("#music").pause();
-                $("#music").load();
-                $(".donghua").css("animation-play-state", "paused")
+            if (audios.paused) {
+                $(".donghua").css("animation-play-state", "running");
+                audios.play();
             } else {
-                $('#music').play()
-                $(".donghua").css("animation-play-state", "running")
-
+                $(".donghua").css("animation-play-state", "paused")
+                audios.pause();
+                audios.load();
             }
         }
         // 轮播图
